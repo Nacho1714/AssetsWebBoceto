@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardActions, CardMedia, Typography, Button, useTheme, SxProps, Theme, Box } from "@mui/material";
+import { Card, CardContent, CardActions, CardMedia, Typography, Button, useTheme, SxProps, Theme, Box, Grid2 as Grid } from "@mui/material";
 
 interface CustomCardProps {
     title: string;
@@ -19,6 +19,10 @@ export default function CustomCard({props} : {props: CustomCardProps}) {
     return (
         <Card
             sx={{
+                // height: "50%",
+                display: "flex",
+                // flex: 1,
+                flexDirection: "column",
                 boxShadow: theme.shadows[3], // Sombra según el tema
                 borderRadius: theme.shape.borderRadius, // Borde redondeado basado en el tema
                 bgcolor: theme.palette.background.paper, // Color de fondo del tema
@@ -29,7 +33,7 @@ export default function CustomCard({props} : {props: CustomCardProps}) {
             {image && (
                 <CardMedia
                     component="img"
-                    height="140"
+                    // height="140"
                     image={image}
                     alt={`${title} image`}
                 />
@@ -42,16 +46,21 @@ export default function CustomCard({props} : {props: CustomCardProps}) {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        flex: 1,
                         p: 2, // Espaciado
+                        flex: 1
                     }}
                 >
                     {graphic}
                 </Box>
             )}
 
+
             {/* Contenido */}
-            <CardContent>
+            <CardContent
+                sx={{
+                    // flex: 0
+                }}
+            >
                 <Typography
                     variant="h5"
                     component="div"

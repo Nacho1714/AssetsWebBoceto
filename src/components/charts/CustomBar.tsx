@@ -28,6 +28,7 @@ export default function CustomBar({ metadata }: { metadata: ChartProps }): JSX.E
 
     const options = {
         responsive: true,
+        maintainAspectRatio: false, // Permitir cambiar el tamaño según el contenedor
         plugins: {
             legend: {
                 display: false,

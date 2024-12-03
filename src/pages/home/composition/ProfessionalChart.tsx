@@ -1,4 +1,4 @@
-import { Divider, Grid2 as Grid, Stack, Typography } from "@mui/material";
+import { Box, Divider, Grid2 as Grid, Stack, Typography } from "@mui/material";
 
 // Card
 import { CustomCardStatistics, CustomCardProfessional, CustomCard } from "../../../components/cards";
@@ -11,17 +11,26 @@ import { WeeklyOrderChart } from "../../../data/charts/graphicHomeData";
 
 export default function ProfessionalChart() {
     return (
-        <Grid container columns={{ md: 3 }} spacing={1}>
+        <Grid
+            container 
+            columns={{ md: 3 }} 
+            spacing={1}
+            sx={{
+                // backgroundColor: "blue",
+            }}
+            >
 
             <Grid size={{ md: 1 }}>
                 <CustomCardProfessional
                     people={people}
-                    props={{ title: "Profesionales" }}
+                    props={{ 
+                        title: "Profesionales",
+                        sx: { height: '100%' } 
+                    }}
                 />
             </Grid>
 
             <Grid container columns={{ md: 3 }} size={{ md: 2 }} spacing={1}>
-                {/* Bucle */}
                 {
                     cardsStatistics.map((card, index) => (
                         <Grid size={{ md: 1 }}>
@@ -32,22 +41,27 @@ export default function ProfessionalChart() {
                                     icon: card?.icon,
                                     description: card?.description,
                                     caption: card?.caption,
-                                    sx: { height: '100%' }
+                                    // sx: { height: '100%' }
                                 }}
                             />
                         </Grid>
                     ))
                 }
-
-                {/* End Bucle */}
             </Grid>
 
-            <Grid size={{ md: 2 }}>
+            <Grid size={{ md: 2 }} sx={{
+                // height: "100%",
+                // backgroundColor: "red"
+                // flexGrow: 1
+            }}>
                 <CustomCard
                     props={{
                         title: "Pedidos Semanales",
                         description: "Los Pedidos aumentaron un 15% esta semana",
                         graphic: <CustomBar metadata={WeeklyOrderChart} />,
+                        sx: {
+                            // height: 388
+                        }
                     }}
                 />
             </Grid>

@@ -36,6 +36,7 @@ export default function CustomCardProfessional({ props, people }: { props:Custom
     return (
         <Card
             sx={{
+                display: 'flex',
                 boxShadow: theme.shadows[3], // Sombra según el tema
                 borderRadius: theme.shape.borderRadius, // Borde redondeado basado en el tema
                 bgcolor: theme.palette.background.paper, // Color de fondo del tema
@@ -43,9 +44,12 @@ export default function CustomCardProfessional({ props, people }: { props:Custom
             }}
         >
             {/* Contenido */}
-            <CardContent>
-                <Grid container columns={{ md: 1 }} spacing={2}>
-
+            <CardContent sx={{
+                flex: 1,
+            }}>
+                <Grid container columns={{ md: 1 }} spacing={2} sx={{
+                    height: "100%",
+                }}>
                     <Grid size={{ md: 1 }}>
                         <Typography variant="h6" align="center">
                             {title}
@@ -67,8 +71,6 @@ export default function CustomCardProfessional({ props, people }: { props:Custom
 
                             <Avatar
                                 sx={{
-                                    width: 150,
-                                    height: 150,
                                     margin: '0 auto',
                                     mt: 2,
                                 }}
@@ -91,6 +93,7 @@ export default function CustomCardProfessional({ props, people }: { props:Custom
                             </Typography>
                         </Stack>
                     </Grid>
+                    
                 </Grid>
             </CardContent>
 

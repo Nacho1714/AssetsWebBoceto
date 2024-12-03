@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Grid2 as Grid } from "@mui/material";
+import { Box, Grid2 as Grid } from "@mui/material";
 
 // Buttons
 import { ButtonPrimary } from "../../components/buttons";
@@ -40,33 +40,61 @@ export default function Home() {
     };
 
     return (
-        <Grid container columns={{ md: 1 }} spacing={8}>
 
-            {/* Botones */}
-            <Grid size={{ md: 1 }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 2, md: 6 }}>
+        <Box
+            sx={{
+                height: '80vh', // Contenedor principal ocupa toda la ventana
+                overflow: 'hidden', // Evita scroll vertical  
+                backgroundColor: "cadetblue",
+            }}
+        >
+
+            <Grid 
+                container 
+                columns={{ md: 1 }} 
+                spacing={8}
+                sx={{
+                    backgroundColor: "brown",
+                    maxHeight: "100%",
+                }}
+                >
+
+                {/* Botones */}
+                <Grid 
+                    container 
+                    size={{ md: 1 }} 
+                    columns={{ md: 6 }} 
+                    spacing={3} 
+                >
                     {
                         Object.values(views).map((view, index) => (
                             <Grid
                                 key={index}
-                                size={{ xs: 1, sm: 1, md: 1 }}
+                                size={{ md: 1 }}
                             >
-                                <ButtonPrimary
-                                    key={index}
-                                    label={view}
-                                    onClick={() => setSelectedChart(view)}
-                                />
+                                <Box>
+                                    <ButtonPrimary
+                                        key={index}
+                                        label={view}
+                                        onClick={() => setSelectedChart(view)}
+                                    />
+                                </Box>
                             </Grid>
                         ))
                     }
                 </Grid>
+
+                {/* Gráficos */}
+                <Grid size={{ md: 1 }} sx={{
+                    // height: "100%",
+                    // backgroundColor: "violet"
+                }}>
+                    {chart()}
+                </Grid>
+
             </Grid>
 
-            {/* Gráficos */}
-            <Grid size={{ md: 1 }} >
-                {chart()}
-            </Grid>
+        </Box>
 
-        </Grid>
     );
 }
