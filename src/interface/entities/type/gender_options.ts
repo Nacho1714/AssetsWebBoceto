@@ -1,0 +1,1 @@
+export type gender_options = "M" | "F"; // Replace with specific options if available

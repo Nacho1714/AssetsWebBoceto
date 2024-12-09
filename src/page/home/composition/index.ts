@@ -1,0 +1,6 @@
+export { default as ClaimComposition } from './ClaimComposition'
+export { default as CompanyComposition } from './CompanyComposition'
+export { default as OrderComposition } from './OrderComposition'
+export { default as PatientComposition } from './PatientComposition'
+export { default as ProfessionalComposition } from './ProfessionalComposition'
+export { default as TreatmentComposition } from './TreatmentComposition'

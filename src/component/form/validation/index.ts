@@ -1,0 +1,1 @@
+export { ValidationRegisterCompany } from "./ValidationRegisterCompany";

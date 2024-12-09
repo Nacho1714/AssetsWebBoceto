@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider as ReactRouterProvider } from "react-router-dom";
 
 import App from "../../App";
-import DashboardLayout from "../../layouts/DashboardLayout";
-import Login from "../../pages/auth/Login";
+import DashboardLayout from "../../layout/DashboardLayout";
+import Login from "../../page/auth/Login";
 import { whiteList } from "../../config/router";
 
 // react-router-dom

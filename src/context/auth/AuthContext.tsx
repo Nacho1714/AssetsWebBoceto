@@ -1,5 +1,5 @@
 import { useReducer, ReactNode, useContext, createContext } from 'react';
-import { authReducer } from '../../utils/auth/authReducer';
+import { authReducer } from '../../util/auth/authReducer';
 
 // Interfaces
 import { AuthAction, AuthContextProps, AuthState, AuthTypes, LoginClient } from '../../interface/auth';

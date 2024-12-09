@@ -1,4 +1,7 @@
+// import type {} from '@mui/x-data-grid/themeAugmentation';
+
 import { ThemeMode } from "../interface/theme";
+// import { ThemeOptions } from "@mui/material/styles";
 
 // Color design tokens
 const tokens = (mode: ThemeMode) => ({
@@ -122,42 +125,24 @@ const tokens = (mode: ThemeMode) => ({
     )
 })
 
+// export const themeSettings = (): ThemeOptions => {
 export const themeSettings = () => {
     const colorsDark = tokens("dark");
     const colorsLight = tokens("light");
 
+    // Todo lo que esta en el return esta mal, empezar desde cero respetando la interfaz ThemeOptions
+
+    // Esta propiedad era necesario y lo pedian para el toolpad, revisar
+    // cssVariables: {
+    //     colorSchemeSelector: 'data-toolpad-color-scheme',
+    // },
+
+    // Revisar este link que es la configuracion que piden para data-grid
+    // https://mui.com/x/react-data-grid/getting-started/#typescript
     return {
         cssVariables: {
             colorSchemeSelector: 'data-toolpad-color-scheme',
         },
-        // typography: {
-        //     fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //     fontSize: 12,
-        //     h1: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 40,
-        //     },
-        //     h2: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 32,
-        //     },
-        //     h3: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 24,
-        //     },
-        //     h4: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 20,
-        //     },
-        //     h5: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 16,
-        //     },
-        //     h6: {
-        //         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        //         fontSize: 14,
-        //     },
-        // },
         colorSchemes: { 
             light: {
                 palette: {

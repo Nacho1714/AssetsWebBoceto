@@ -1,5 +1,5 @@
 // Iconos
-import Icons from "../../icons";
+import Icons from "../../icon";
 
 export const cardsStatistics = [,
     {

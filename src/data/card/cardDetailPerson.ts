@@ -1,4 +1,4 @@
-import { InfoCardDetailPerson } from "../../interface/components/cards/card-detail-person-interface";
+import { InfoCardDetailPerson } from "../../interface/component/card/card-detail-person-interface";
 
 export const people: InfoCardDetailPerson[] = [
     { name: "Matias", last_name: "Johnson", profession: "Profesional" },
